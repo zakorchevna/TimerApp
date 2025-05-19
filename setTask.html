@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Pomo Doro !</title>
+  </head>
+  <body>
+    <div class="setTaskDiv">
+      <h1>SET YOUR TASK</h1>
+      <img src="./assets/crayonPomo.png" alt="Pomodoro Crayon" />
+      <p>
+        Write down the task you want to achieve <br />
+        during this session.
+      </p>
+      <input
+      type="text"
+      placeholder="Write your task here..."
+      id="task-value"
+      size="25"
+    />
+    
+    <label for="duration">Choose duration:</label>
+    <select id="duration">
+      <option value="5">5 minutes</option>
+      <option value="10">10 minutes</option>
+      <option value="15">15 minutes</option>
+      <option value="25" selected>25 minutes</option>
+    </select>
+    
+    <button id="set-timer-btn">SET TIMER</button>
+    
+
+    <script>
+      document.getElementById("set-timer-btn").addEventListener("click", () => {
+        const task = document.getElementById("task-value").value;
+        const duration = document.getElementById("duration").value;
+    
+        localStorage.setItem("taskValue", task);
+        localStorage.setItem("taskDuration", duration);
+    
+        window.electronAPI.loadPage("timerBegins.html");
+      });
+    </script>

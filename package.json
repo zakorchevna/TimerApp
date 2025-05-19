@@ -1,0 +1,17 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "description": "timer desktop application",
+  "license": "ISC",
+  "author": "zakorchevna",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . pomo-chrono --platform=win32 --arch=x64 --overwrite"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-packager": "^17.1.2"
+  }
+}
